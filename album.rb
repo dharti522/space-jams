@@ -11,13 +11,8 @@ class Album
   end
 
   def duration_min
-    # length = 0
-    # @tracks.each do |track|
-    #   length += track[:duration_ms].to_f
-    # end
-    # (length/1000/60).round(2)
-  total_duration_ms  = @tracks.reduce(0) { |sum, track| sum + track[:duration_ms].to_f }
-   (total_duration_ms/1000/60).round(2)
+    total_duration_ms = @tracks.reduce(0) { |sum, track| sum + track[:duration_ms].to_f }
+    (total_duration_ms / 1000 / 60).round(2)
   end
 
   def summary
